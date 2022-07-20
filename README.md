@@ -35,7 +35,7 @@ You can find our presentation in the <a href="fakelink">Slides</a> folder.<br>
 <br>
 
 <p align = "center">
-  <a href = "https://github.com/malborroni/"><img src="https://raw.githubusercontent.com/malborroni/Foundations_of_Computer-Science/master/images/GitHub.png" width = "2.5%"></a>
+  <a href = "https://github.com/TStrada"><img src="https://github.com/TStrada/TStrada/blob/main/GitHub_image.png" width = "2.5%"></a>
 </p>
 
 &#8860; &nbsp; ** **
