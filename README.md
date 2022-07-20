@@ -1,8 +1,8 @@
-<p align = "center">
-  <a href="http://datascience.disco.unimib.it/it/"><img src ="https://raw.githubusercontent.com/malborroni/Foundations_of_Computer-Science/master/images/DSunimib.png" width = "100%"></a>
+<p align = "left">
+  <a href="http://datascience.disco.unimib.it/it/"><img src ="https://github.com/TStrada/Web-marketing-project/blob/main/Images/DataScienceUnimib.png" width = "45%"></a>
 </p>
 <p align="center">
-  <img src="https://github.com/malborroni/Digital-Marketing/blob/master/Images/Loading.png" width="25%">
+  <img src="https://github.com/TStrada/Web-marketing-project/blob/main/Images/Loading.png" width="25%">
 </p>
   <h6 align="center">a Digital Marketing Project</h6>
 <p align="center">
@@ -22,7 +22,7 @@ Dataset used and preprocessing application
 
 <a name="presentation"></a>
 ## &#9741; &nbsp; Presentation
-You can find our presentation in the <a href="fakelink">Slides</a> folder.<br>
+You can find our presentation in the <a href="https://github.com/TStrada/Web-marketing-project/tree/main/Report">Slides</a> folder.<br>
 
 
 <a name="aboutus"></a>
