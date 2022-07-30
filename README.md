@@ -38,7 +38,7 @@ You can find our presentation in the <a href="https://github.com/TStrada/Web-mar
   <a href = "https://github.com/TStrada"><img src="https://github.com/TStrada/TStrada/blob/main/GitHub_image.png" width = "2.5%"></a>
 </p>
 
-&#8860; &nbsp; **Federica Madon **
+&#8860; &nbsp; **Federica Madon**
 
 - *Current Studies*: Data Science M.Sc. Student at Università degli Studi di Milano-Bicocca (UniMiB);
 - *Background*: Bachelor degree in Mathematics at Università degli Studi di Milano-Bicocca (UniMiB).
