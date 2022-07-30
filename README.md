@@ -45,7 +45,7 @@ You can find our presentation in the <a href="https://github.com/TStrada/Web-mar
 - <br>
 
 <p align = "center">
-<!--   <a href = "https linkedin"><img src="link sub directory image linkedin " width = "2.3%"></a> -->
+  <a href = "https://github.com/f-madon"><img src="https://github.com/TStrada/TStrada/blob/main/GitHub_image.png" width = "2.5%"></a>
 </p>
 
 &#8860; &nbsp; ** **
