@@ -55,5 +55,9 @@ You can find our presentation in the <a href="https://github.com/TStrada/Web-mar
 <br>
 
 <p align = "center">
+  <a href = "https://github.com/emanuelaelli"><img src="https://github.com/TStrada/TStrada/blob/main/GitHub_image.png" width = "2.5%"></a>
+</p>
+
+<p align = "center">
 </p>
 
