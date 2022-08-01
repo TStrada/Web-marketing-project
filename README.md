@@ -41,16 +41,17 @@ You can find our presentation in the <a href="https://github.com/TStrada/Web-mar
 &#8860; &nbsp; **Federica Madon**
 
 - *Current Studies*: Data Science M.Sc. Student at Università degli Studi di Milano-Bicocca (UniMiB);
-- *Background*: Bachelor degree in Mathematics at Università degli Studi di Milano-Bicocca (UniMiB).
-- <br>
+- *Background*: Bachelor degree in Mathematics at Università degli Studi di Milano-Bicocca (UniMiB). 
+<br>
 
 <p align = "center">
   <a href = "https://github.com/f-madon"><img src="https://github.com/TStrada/TStrada/blob/main/GitHub_image.png" width = "2.5%"></a>
 </p>
 
-&#8860; &nbsp; ** **
+&#8860; &nbsp; **Emanuela Elli**
 
 - *Current Studies*: Data Science M.Sc. Student at Università degli Studi di Milano-Bicocca (UniMiB);
+- *Background*: Bachelor degree in Computer Science for New Media at Università degli Studi di Milano (UniMi).
 <br>
 
 <p align = "center">
