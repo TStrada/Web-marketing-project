@@ -65,14 +65,14 @@ df.head(5)
 
 
 # Features: 
-# 1) ID_SCONTRINO = Codice identificativo dell'acquisto
-# 2) ID_CLI = Codice identificativo del cliente
-# 3) ID_NEG = Codice Identificativo del negozio
-# 4) COD_REPARTO = Codice del reparto
+# 1) ID_SCONTRINO = Purchase tracking number
+# 2) ID_CLI = Customer tracking number
+# 3) ID_NEG = Shop tracking number
+# 4) COD_REPARTO = Unit tracking number
 # 5) DIREZIONE = 
-# 6) IMPORTO_LORDO = Prezzo base
-# 7) SCONTO = sconto applicato (euro)
-# 8) DATETIME = data acquisto
+# 6) IMPORTO_LORDO = Gross amount
+# 7) SCONTO = discount
+# 8) DATETIME = Purchase date
 
 # In[142]:
 
