@@ -16,19 +16,18 @@ import seaborn as sns
 sns.set_theme(style="whitegrid")
 import datetime
 
-# define 
 
 # df1: contiene informazioni sugli abbonamenti fedeltà di ciascun account cliente
-df1 = pd.read_csv(BASE_PATH + 'raw_1_cli_fid.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df1 = pd.read_csv('raw_1_cli_fid.csv', sep = ';', na_values = '', encoding = 'latin-1')
 # df2: contiene informazioni su ciascun account cliente e descrive le caratteristiche di esse, tra la prima tabella e la seconda ci sono dei duplicati, 
 # per esempio, perché un cliente può avere più tessere fedeltà o la stessa tessera fedeltà può appartenere a più clienti
-df2 = pd.read_csv(BASE_PATH + 'raw_2_cli_account.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df2 = pd.read_csv('raw_2_cli_account.csv', sep = ';', na_values = '', encoding = 'latin-1')
 # df3: contiene informazioni sull'indirizzo corrispondente a un account cliente
-df3 = pd.read_csv(BASE_PATH + 'raw_3_cli_address.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df3 = pd.read_csv('raw_3_cli_address.csv', sep = ';', na_values = '', encoding = 'latin-1')
 # df4: contiene informazioni sulle politiche sulla privacy accettate da ciascun cliente
-df4 = pd.read_csv(BASE_PATH + 'raw_4_cli_privacy.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df4 = pd.read_csv('raw_4_cli_privacy.csv', sep = ';', na_values = '', encoding = 'latin-1')
 # df7: contiene le transazioni di acquisto e rimborso di ciascun cliente, è una delle parti più cospicue di questa base di dati
-df7 = pd.read_csv(BASE_PATH + 'raw_7_tic.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df7 = pd.read_csv('raw_7_tic.csv', sep = ';', na_values = '', encoding = 'latin-1')
 
 """# df1"""
 
@@ -104,8 +103,6 @@ plt.ylabel('TOT_CLIs')
 plt.grid(linestyle='-', linewidth=0.2)
 plt.show()
 
-#Si può disegnare anche così
-#ax = sns.barplot(x = 'LAST_COD_FID', y = 'TOT_CLIs', data = df1_dist_codfid)
 
 #Variable LAST_TYP_CLI_FID
 #Compute distribution
@@ -120,7 +117,6 @@ plt.xlabel('LAST_TYP_CLI_FID')
 plt.ylabel('TOT_CLIs')
 plt.grid(linestyle='-', linewidth=0.2)
 plt.show()
-#Si può disegnare anche così: ax = sns.barplot(x = 'LAST_TYP_CLI_FID', y = 'TOT_CLIs', data = df1_dist_clifid)
 
 #Variable LAST_STATUS_FID
 #Compute distribution
@@ -136,8 +132,6 @@ plt.ylabel('TOT_CLIs')
 plt.grid(linestyle='-', linewidth=0.2)
 plt.show()
 
-#Si può disegnare anche così: ax = sns.barplot(x = 'LAST_STATUS_FID', y = 'TOT_CLIs', data = df1_dist_statusfid)
-
 #Variable NUM_FIDs
 #Compute distribution
 df1_dist_numfid = df_1_cli_fid_clean.groupby('NUM_FIDs', as_index = False)[['ID_CLI']].nunique()
@@ -152,8 +146,6 @@ plt.ylabel('TOT_CLIs')
 plt.grid(linestyle='-', linewidth=0.2)
 plt.show()
 
-#ax = sns.barplot(x = 'NUM_FIDs', y = 'TOT_CLIs', data = df1_dist_numfid)
-
 #FINAL REVIEW df_1_clean
 df_1_cli_fid_clean.info()
 
@@ -162,10 +154,6 @@ df_1_cli_fid_clean.describe()
 df1 = df_1_cli_fid_clean
 df1.to_csv('df1.csv', index=False)
 df1.to_csv('df1_zip.csv', index=False, compression='gzip')
-
-"""# df2
-- manca l'explore delle colonne
-"""
 
 #Check for duplicates
 print('Check for duplicates')
@@ -191,7 +179,7 @@ df1['ID_CLI'].isin(df2['ID_CLI']).value_counts()
 
 df2['EMAIL_PROVIDER']
 
-# ci sono troppi valori diversi per EMAIL_PROVIDER
+# ci sono molti valori diversi per EMAIL_PROVIDER
 pd.set_option("display.max_rows", None)
 df2['EMAIL_PROVIDER'].value_counts()
 df2['EMAIL_PROVIDER'].value_counts(normalize=True) * 100 # percentuale
@@ -218,10 +206,6 @@ df2['EMAIL_PROVIDER'].value_counts()
 
 df2.to_csv('df2.csv', index=False)
 df2.to_csv('df2_zip.csv', index=False, compression='gzip')
-
-"""# df3
-- manca l'explore delle colonne
-"""
 
 #Check for duplicates
 print('Check for duplicates')
@@ -305,7 +289,7 @@ df7['SCONTO'] = df7['SCONTO'].replace(',','.', regex=True)
 df7 = df7.astype({'SCONTO': 'float'})
 
 #Elimino le righe che hanno DIREZIONE = 1 e con IMPORTO_LORDO negativo perché non sono casi possibili, sono degli errori.
-#df7.drop(df7.index[(df7['DIREZIONE'] == 1) & (df7['IMPORTO_LORDO'] < 0)], inplace = True)
+df7.drop(df7.index[(df7['DIREZIONE'] == 1) & (df7['IMPORTO_LORDO'] < 0)], inplace = True)
 
 #Creo la colonna che considera l'importo netto perché così ne elimino due (le eliminiamo alla fine per via di altre operazioni)
 df7['IMPORTO_NETTO'] = df7['IMPORTO_LORDO'] - df7['SCONTO']
@@ -415,7 +399,6 @@ df7_dist_customer.reset_index(inplace = True, drop = True)
 #df7_dist_customer = df7_dist_customer.groupby('TOT_SCONTRINI', as_index = False)[['ID_CLI']].count()
 #df7_dist_customer.rename(columns = {'ID_CLI' : 'TOT_CLI'}, inplace = True)
 df7_dist_customer.head()
-#Tengo anche quelli con 0 scontrini?
 
 df7_dist_customer.sort_values(['TOT_SCONTRINI'], ascending = [False])
 #I 3 id_cliente che registrano il numero maggiore di acquisti sono: 376925, 117212, 248975 con rispettivamente 177, 155, 154 acquisti
@@ -428,8 +411,6 @@ df7_plot_dist_customer = pd.DataFrame({'Numero di acquisti':['1 o più', '2 o pi
                                                              len(df7_dist_customer[df7_dist_customer['TOT_SCONTRINI'] >= 5]), 
                                                              len(df7_dist_customer[df7_dist_customer['TOT_SCONTRINI'] >= 6])]})
 ax = df7_plot_dist_customer.plot.bar(x='Numero di acquisti', y='Numero di clienti', rot=0)
-#Ci andrebbe anche la percentuale di conferma ma è già tanto così
-#Cambiare colori magari
 
 """### The days for next purchase curve"""
 
@@ -471,20 +452,6 @@ print('Summary: ', df7_day_next_purchase.NEXT_PURCHASE_DAY.describe())
 print('80% ', np.percentile(a = df7_day_next_purchase.NEXT_PURCHASE_DAY, q = 80))
 print('85% ', np.percentile(a = df7_day_next_purchase.NEXT_PURCHASE_DAY, q = 85))
 print('90% ', np.percentile(a = df7_day_next_purchase.NEXT_PURCHASE_DAY, q = 90))
-
-"""### Altro grafico"""
-
-!pip install pandas plotnine --quiet
-
-from plotnine import *
-from plotnine import ggplot, aes, geom_line
-
-p = ggplot(df7_day_next_purchase, aes(x= df7_day_next_purchase['NEXT_PURCHASE_DAY'])) + geom_histogram(color="black", fill="lightblue") \
-+ geom_vline(aes(xintercept = 60), color="blue", linetype="dashed", size=1) \
-+ labs(title = "Ultimo acquisto - penultimo acquisto", x = "days", y = "frequency") \
-+ scale_x_continuous(breaks=range(0,300,30)) + theme_minimal()
-
-print(p)
 
 """### df7_churn"""
 
@@ -544,23 +511,8 @@ df7.describe()
 """### Save"""
 
 df7.to_csv('df7.csv', index=False)
+df7.to_csv('df7_zip.csv', index=False, compression='gzip')
 
 df7_churn = pd.merge(left=df_churn, right=df7, how='left', on='ID_CLI')
 df7_churn.to_csv('df7_churn.csv', index=False)
-#df7_churn.to_csv('df7_churn_zip.csv', index=False, compression='gzip')
-
-## Save in zip format
-df1 = pd.read_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df1.csv')
-df2 = pd.read_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df2.csv')
-df3 = pd.read_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df3.csv')
-df7 = pd.read_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df7.csv')
-df7_churn = pd.read_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df7_churn.csv')
-
-df1.to_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df1_zip.csv', index = False, compression = 'gzip')
-df2.to_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df2_zip.csv', index = False, compression = 'gzip')
-df3.to_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df3_zip.csv', index = False, compression = 'gzip')
-df7.to_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df7_zip.csv', index = False, compression = 'gzip')
-df7_churn.to_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df7_churn_zip.csv', index = False, compression = 'gzip')
-
-df4 = pd.read_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df4.csv')
-df4.to_csv('/content/drive/MyDrive/Progetto_Web/Dataset_Clean/df4_zip.csv', index = False, compression = 'gzip')
+df7_churn.to_csv('df7_churn_zip.csv', index=False, compression='gzip')
