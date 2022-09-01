@@ -46,8 +46,8 @@ import datetime
 # In[2]:
 
 
-df = pd.read_csv('df7_zip.csv', decimal = ',', 
-                 encoding = 'latin-1', compression = 'gzip')
+df = pd.read_csv('df7.csv', decimal = ',', 
+                 encoding = 'latin-1')
 df.head()
 
 
