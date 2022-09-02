@@ -38,12 +38,10 @@ import seaborn as sns
 import squarify
 import datetime
 
+BASE_PATH = '/content/drive/MyDrive/Progetto_Web/Dataset_Script/Dataset/'
 
 # In[2]:
 
-
-# print(pd.__version__, np.__version__, re.__version__, scipy.__version__, 
-#      matplotlib.__version__, sns.__version__, squarify)
 
 
 # Import datasets previously cleaned (Look at Data Preparation)
@@ -51,8 +49,8 @@ import datetime
 # In[3]:
 
 
-df = pd.read_csv('df7.csv', decimal = ',', 
-                 encoding = 'latin-1', compression = 'gzip')
+df = pd.read_csv(BASE_PATH + 'df7.csv', decimal = ',', 
+                 encoding = 'latin-1')
 df.head()
 
 
@@ -80,8 +78,8 @@ df.dtypes
 
 
 ## Upload the dataset containing customers informations
-df_1 = pd.read_csv('df1_zip.csv', decimal = ',', 
-                   encoding = 'latin-1', compression = 'gzip')
+df_1 = pd.read_csv(BASE_PATH + 'df1.csv', decimal = ',', 
+                   encoding = 'latin-1')
 df_1.head(5)
 
 
@@ -104,7 +102,7 @@ data.plot.bar(x='LAST_COD_FID',
               ylabel = 'N° clienti',
               xlabel = 'Codice fedeltà'
              )
-plt.savefig('Fidelity Customers.png')
+#plt.savefig('Fidelity Customers.png')
 
 
 ## Customers often have standard or premium class fidelity
@@ -170,7 +168,7 @@ plt.xticks(fontsize=40)
 plt.xlabel('Recency', fontsize=50)
 plt.ylabel('Densità', fontsize=50)
 plt.title("Recency Distribution",fontsize=60,fontweight="bold")
-plt.savefig('Distribution R.png')
+#plt.savefig('Distribution R.png')
 
 # Plot distribution of F
 ax = sns.distplot(dt['Frequency'], rug=True, rug_kws={"color": "g"},
@@ -186,7 +184,7 @@ plt.xticks(fontsize=40)
 plt.xlabel('Frequency', fontsize=50)
 plt.ylabel('Densità', fontsize=50)
 plt.title("Frequency Distribution",fontsize=60,fontweight="bold")
-plt.savefig('Distribution F.png')
+#plt.savefig('Distribution F.png')
 
 # Plot distribution of M
 ax = sns.distplot(dt['MonetaryValue'], rug=True,
@@ -203,7 +201,7 @@ plt.xticks(fontsize=40)
 plt.xlabel('MonetaryValue', fontsize=50)
 plt.ylabel('Densità', fontsize=50)
 plt.title("Monetary Value Distribution",fontsize=60,fontweight="bold")
-plt.savefig('Distribution M.png')
+#plt.savefig('Distribution M.png')
 
 
 # ### Calculating R, F and M groups
@@ -348,7 +346,7 @@ squarify.plot(sizes=[2,2,2,2,2,2,2,2,2], #count_R_F,
 plt.title("RF Segments",fontsize=40,fontweight="bold")
 plt.axis('off')
 plt.show()
-fig.savefig('RF-Matrix.png')
+#fig.savefig('RF-Matrix.png')
 
 ## Class definition:
 ## One-Timer: Low or Medium Recency and Low Frequency
@@ -477,7 +475,7 @@ DT_RFM_AGG.plot.bar(x='RFM_Level',
                     color=color, 
                    xlabel='Segmenti customer base')
 plt.ylabel('%Clienti')
-plt.savefig('RFM_Level.png')
+#plt.savefig('RFM_Level.png')
 
 
 # Possible actions:
