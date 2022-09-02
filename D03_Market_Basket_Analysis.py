@@ -19,8 +19,9 @@ from mlxtend.frequent_patterns import apriori
 from mlxtend.frequent_patterns import association_rules
 import networkx as nx
 
+BASE_PATH = '/content/drive/MyDrive/Progetto_Web/Dataset_Script/Dataset/'
 #Importazione dei dataset
-df7 = pd.read_csv('df7.csv', sep = ',', na_values = '', encoding = 'latin-1')
+df7 = pd.read_csv(BASE_PATH + 'df7.csv', sep = ',', na_values = '', encoding = 'latin-1')
 
 """## Data Preparation"""
 
