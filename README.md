@@ -1,8 +1,5 @@
-<p align = "left">
-  <a href="http://datascience.disco.unimib.it/it/"><img src ="https://github.com/TStrada/Web-marketing-project/blob/main/Images/DataScienceUnimib.png" width = "45%"></a>
-</p>
 <p align="center">
-  <img src="https://github.com/TStrada/Web-marketing-project/blob/main/Images/Loading.png" width="25%">
+  <img src="https://github.com/TStrada/DSLab_WebMarketing/blob/d405eeae08e5f053cc004eb2d500843a383bcc63/Images/ThemeGithubWebMarketing.jpg" width="100%">
 </p>
   <h6 align="center">a Digital Marketing Project</h6>
 <p align="center">
@@ -14,11 +11,30 @@
 
 <a name="overview"></a>
 ## &#9741; &nbsp; Overview
-Summary description of the project
+Congratulatons! Your applicatons for the data scientst and data analyst positons has been chosen!
+A couple of signatures on the contracts and you are ofcially hired by this well-known retail company.
+Now the marketng chief ofcer is giving you “The speech”:
+«As a company conscious of the fast business evoluton of our tmes, we do understand the need to stay
+updated». «We cannot ignore the newest approaches and technological advantages», he contnues «and
+we must aim for a drastc change of the entre team mind-set». «We want our every-day marketng be
+data-driven». «You» he emphasizes «will play an important role in this scenario».
+Then, he explain concretely the task he had in mind: «I am expectng you to analyse the data available and
+make some proposal of new data-driven strategies for our digital marketng campaigns». «I am always
+thinking we need to do more to retain high-value customers» he exclaims «Yes! this is defnitely an issue
+you must address at frst. Analyse the data, wrap the results in a nice presentaton and we will discuss it
+with the rest of the team!».
+Before he leaves you for his next meetng, he gives the last reminder: «Just one last thing before startng to
+crunch the data.. I am expectng graphs and numbers to support your proposals, but remember to be clear
+as possible in the arguments you will be presentng. I want that the advantages of these approach will be
+clear to everybody in the team».
+The project is actually a simulaton of a typical request:
+- analyse the data,
+- exploit the results to defne proftable data-driven strategies,
+- present the fndings in order to persuade about their efectveness.
 
 <a name="data"></a>
 ## &#9741; &nbsp; Data
-Dataset used and preprocessing application
+Dataset can't be shared for copyright reason
 
 <a name="presentation"></a>
 ## &#9741; &nbsp; Presentation
@@ -61,4 +77,3 @@ You can find our presentation in the <a href="https://github.com/TStrada/Web-mar
 
 <p align = "center">
 </p>
-
