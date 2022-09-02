@@ -16,18 +16,19 @@ import seaborn as sns
 sns.set_theme(style="whitegrid")
 import datetime
 
+BASE_PATH = '/content/drive/MyDrive/Progetto_Web/Dataset_Script/Dataset/'
 
 # df1: contiene informazioni sugli abbonamenti fedeltà di ciascun account cliente
-df1 = pd.read_csv('raw_1_cli_fid.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df1 = pd.read_csv(BASE_PATH + 'raw_1_cli_fid.csv', sep = ';', na_values = '', encoding = 'latin-1')
 # df2: contiene informazioni su ciascun account cliente e descrive le caratteristiche di esse, tra la prima tabella e la seconda ci sono dei duplicati, 
 # per esempio, perché un cliente può avere più tessere fedeltà o la stessa tessera fedeltà può appartenere a più clienti
-df2 = pd.read_csv('raw_2_cli_account.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df2 = pd.read_csv(BASE_PATH + 'raw_2_cli_account.csv', sep = ';', na_values = '', encoding = 'latin-1')
 # df3: contiene informazioni sull'indirizzo corrispondente a un account cliente
-df3 = pd.read_csv('raw_3_cli_address.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df3 = pd.read_csv(BASE_PATH + 'raw_3_cli_address.csv', sep = ';', na_values = '', encoding = 'latin-1')
 # df4: contiene informazioni sulle politiche sulla privacy accettate da ciascun cliente
-df4 = pd.read_csv('raw_4_cli_privacy.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df4 = pd.read_csv(BASE_PATH + 'raw_4_cli_privacy.csv', sep = ';', na_values = '', encoding = 'latin-1')
 # df7: contiene le transazioni di acquisto e rimborso di ciascun cliente, è una delle parti più cospicue di questa base di dati
-df7 = pd.read_csv('raw_7_tic.csv', sep = ';', na_values = '', encoding = 'latin-1')
+df7 = pd.read_csv(BASE_PATH + 'raw_7_tic.csv', sep = ';', na_values = '', encoding = 'latin-1')
 
 """# df1"""
 
@@ -152,8 +153,8 @@ df_1_cli_fid_clean.info()
 df_1_cli_fid_clean.describe()
 
 df1 = df_1_cli_fid_clean
-df1.to_csv('df1.csv', index=False)
-df1.to_csv('df1_zip.csv', index=False, compression='gzip')
+df1.to_csv(BASE_PATH + 'df1.csv', index=False)
+df1.to_csv(BASE_PATH + 'df1_zip.csv', index=False, compression='gzip')
 
 #Check for duplicates
 print('Check for duplicates')
@@ -204,8 +205,8 @@ for i in df2['EMAIL_PROVIDER']:
 
 df2['EMAIL_PROVIDER'].value_counts()
 
-df2.to_csv('df2.csv', index=False)
-df2.to_csv('df2_zip.csv', index=False, compression='gzip')
+df2.to_csv(BASE_PATH + 'df2.csv', index=False)
+df2.to_csv(BASE_PATH + 'df2_zip.csv', index=False, compression='gzip')
 
 #Check for duplicates
 print('Check for duplicates')
@@ -236,8 +237,8 @@ df3.head()
 df2['ID_ADDRESS'].isin(df3['ID_ADDRESS']).value_counts()
 #df3['ID_ADDRESS'].isin(df2['ID_ADDRESS']).value_counts()
 
-df3.to_csv('df3.csv', index=False)
-df3.to_csv('df3_zip.csv', index=False, compression='gzip')
+df3.to_csv(BASE_PATH + 'df3.csv', index=False)
+df3.to_csv(BASE_PATH + 'df3_zip.csv', index=False, compression='gzip')
 
 """# df4"""
 
@@ -258,8 +259,8 @@ df1['ID_CLI'].isin(df4['ID_CLI']).value_counts()
 df4['ID_CLI'].isin(df1['ID_CLI']).value_counts()
 # tutti gli ID_CLI in df1 sono anche in df4 e viceversa
 
-df4.to_csv('df4.csv', index=False)
-df4.to_csv('df4__zip.csv', index=False, compression='gzip')
+df4.to_csv(BASE_PATH + 'df4.csv', index=False)
+df4.to_csv(BASE_PATH + 'df4__zip.csv', index=False, compression='gzip')
 
 """# df7"""
 
@@ -510,9 +511,9 @@ df7.describe()
 
 """### Save"""
 
-df7.to_csv('df7.csv', index=False)
-df7.to_csv('df7_zip.csv', index=False, compression='gzip')
+df7.to_csv(BASE_PATH + 'df7.csv', index=False)
+df7.to_csv(BASE_PATH + 'df7_zip.csv', index=False, compression='gzip')
 
 df7_churn = pd.merge(left=df_churn, right=df7, how='left', on='ID_CLI')
-df7_churn.to_csv('df7_churn.csv', index=False)
-df7_churn.to_csv('df7_churn_zip.csv', index=False, compression='gzip')
+df7_churn.to_csv(BASE_PATH + 'df7_churn.csv', index=False)
+df7_churn.to_csv(BASE_PATH + 'df7_churn_zip.csv', index=False, compression='gzip')
