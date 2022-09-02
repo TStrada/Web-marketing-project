@@ -141,9 +141,7 @@ df = df.copy()
 
 df
 
-"""# Modello
-[Link modello](https://towardsdatascience.com/predict-customer-churn-in-python-e8cd6d3aaa7)
-"""
+"""# Modello"""
 
 df.info()
 
