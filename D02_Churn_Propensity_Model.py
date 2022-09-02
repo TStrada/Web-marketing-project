@@ -72,22 +72,23 @@ from time import time
 from dateutil.parser import parse
 import joblib
 
+BASE_PATH = '/content/drive/MyDrive/Progetto_Web/Dataset_Script/Dataset/'
 
 #Importation of Datasets
 # df1: contiene informazioni sugli abbonamenti fedeltà di ciascun account cliente
-df1 = pd.read_csv('df1.csv', sep = ',', na_values = '', encoding = 'latin-1')
+df1 = pd.read_csv(BASE_PATH + 'df1.csv', sep = ',', na_values = '', encoding = 'latin-1')
 # df2: contiene informazioni su ciascun account cliente e descrive le caratteristiche di esse, tra la prima tabella e la seconda ci sono dei duplicati, 
 # per esempio, perché un cliente può avere più tessere fedeltà o la stessa tessera fedeltà può appartenere a più clienti
-df2 = pd.read_csv('df2.csv', sep = ',', na_values = '', encoding = 'latin-1')
+df2 = pd.read_csv(BASE_PATH + 'df2.csv', sep = ',', na_values = '', encoding = 'latin-1')
 # df3: contiene informazioni sull'indirizzo corrispondente a un account cliente
-df3 = pd.read_csv('df3.csv', sep = ',', na_values = '', encoding = 'latin-1')
+df3 = pd.read_csv(BASE_PATH + 'df3.csv', sep = ',', na_values = '', encoding = 'latin-1')
 # df4: contiene informazioni sulle politiche sulla privacy accettate da ciascun cliente
-df4 = pd.read_csv('df4.csv', sep = ',', na_values = '', encoding = 'latin-1')
+df4 = pd.read_csv(BASE_PATH + 'df4.csv', sep = ',', na_values = '', encoding = 'latin-1')
 
 # df7: contiene le transazioni di acquisto e rimborso di ciascun cliente, è una delle parti più cospicue di questa base di dati
-df7 = pd.read_csv('df7.csv', sep = ',', na_values = '', encoding = 'latin-1')
+df7 = pd.read_csv(BASE_PATH + 'df7.csv', sep = ',', na_values = '', encoding = 'latin-1')
 
-df7_churn_tot = pd.read_csv('df7_churn.csv', sep = ',', na_values = '', encoding = 'latin-1')
+df7_churn_tot = pd.read_csv(BASE_PATH + 'df7_churn.csv', sep = ',', na_values = '', encoding = 'latin-1')
 df7_churn = df7_churn_tot[['ID_CLI', 'CHURN']]
 
 """# Merge"""
