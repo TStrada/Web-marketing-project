@@ -38,7 +38,7 @@ Dataset can't be shared for copyright reason
 
 <a name="presentation"></a>
 ## &#9741; &nbsp; Presentation
-You can find our presentation in the <a href="https://github.com/TStrada/Web-marketing-project/tree/main/Report">Slides</a> folder.<br>
+You can find our presentation in the <a href="https://github.com/TStrada/Web-marketing-project/tree/main/Report](https://github.com/TStrada/Web-marketing-project/tree/main/Slides">Slides</a> folder.<br>
 
 
 <a name="aboutus"></a>
